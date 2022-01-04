@@ -70,9 +70,9 @@ namespace FundamentalCSharp
 
         public static void LatihanLoopingStatement()
         {
-            Console.WriteLine("===========================");
-            Console.WriteLine("Belajar Operasi Kondisional");
-            Console.WriteLine("===========================");
+            Console.WriteLine("=======================");
+            Console.WriteLine("Belajar Operasi Looping");
+            Console.WriteLine("=======================");
 
             WhileLoopStatement(21);
 
