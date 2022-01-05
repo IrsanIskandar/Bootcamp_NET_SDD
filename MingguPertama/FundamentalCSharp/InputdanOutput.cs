@@ -18,8 +18,6 @@ namespace FundamentalCSharp
             Console.Write("Ketikan inputan : ");
             string x = Console.ReadLine();
             Console.WriteLine("Output yang anda ketikan adalah : {0}", x);
-
-            Console.ReadLine();
         }
 
         public static void LatihanOperasiAritmatika()
@@ -47,8 +45,6 @@ namespace FundamentalCSharp
             //Console.WriteLine("Hasil Penjumlahan Integer");
             //ModulusInteger(21, 12);
             #endregion
-
-            Console.ReadLine();
         }
 
         public static void LatihanKondisionalStatement()
@@ -64,8 +60,6 @@ namespace FundamentalCSharp
 
             //SwitchCaseStatement(21);
             #endregion
-
-            Console.ReadLine();
         }
 
         public static void LatihanLoopingStatement()
@@ -74,15 +68,13 @@ namespace FundamentalCSharp
             Console.WriteLine("Belajar Operasi Looping");
             Console.WriteLine("=======================");
 
-            WhileLoopStatement(21);
+            ForLoopStatement(21);
 
             #region Kondisional Operasi
             //DoWhileLoopStatement(21);
 
             //ForLoopStatement(21);
             #endregion
-
-            Console.ReadLine();
         }
 
         private static void PenjumlahanString(string x, string y)
@@ -275,7 +267,7 @@ namespace FundamentalCSharp
 
             for (int i = 0; i < x; i++)
             {
-
+                Console.WriteLine("Nilah X {0} iterasi ke-{1}", x, i);
             }
         }
 
