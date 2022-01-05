@@ -270,13 +270,5 @@ namespace FundamentalCSharp
                 Console.WriteLine("Nilah X {0} iterasi ke-{1}", x, i);
             }
         }
-
-        private static void ForeachLoopStatement(string[] arr)
-        {
-            foreach (var item in arr)
-            {
-
-            }
-        }
     }
 }
