@@ -29,6 +29,7 @@ class Program
             Console.WriteLine("======================================");
             Console.Write("Pilih Menu (1, 2, 3, 4, 5, 6, 7, 8) : ");
             x = Console.ReadLine();
+
             switch (x)
             {
                 case "1":
