@@ -25,10 +25,11 @@ class Program
             Console.WriteLine("5. String Array List");
             Console.WriteLine("6. Integer Array List");
             Console.WriteLine("7. List Collections");
-            Console.WriteLine("8. Bersihkan Layar");
-            Console.WriteLine("9. Keluar");
+            Console.WriteLine("8. Game Tebak Angka");
+            Console.WriteLine("9. Bersihkan Layar");
+            Console.WriteLine("10. Keluar");
             Console.WriteLine("======================================");
-            Console.Write("Pilih Menu (1, 2, 3, 4, 5, 6, 7, 8, 9) : ");
+            Console.Write("Pilih Menu (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) : ");
             x = Console.ReadLine();
 
             switch (x)
@@ -55,6 +56,9 @@ class Program
                     ListCollections.LatihanListCollection();
                     break;
                 case "8":
+                    GameTebakAngka.PermainanTebakAngka();
+                    break;
+                case "9":
                     Console.Clear();
                     break;
                 default:
@@ -63,7 +67,7 @@ class Program
                     break;
             }
 
-        } while (x != "9");
+        } while (x != "10");
 
         Console.WriteLine("press any key...");
         Console.ReadKey();
