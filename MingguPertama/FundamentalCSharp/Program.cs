@@ -6,7 +6,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-        string x= string.Empty; ;
+        string x = string.Empty;
 
         do
         {
