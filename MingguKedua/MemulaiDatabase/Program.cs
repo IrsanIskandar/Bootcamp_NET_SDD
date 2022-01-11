@@ -69,7 +69,7 @@ public class Program
                     string jnsKelInsert = Console.ReadLine();
                     MahasiswaModel maInsert = new MahasiswaModel()
                     {
-                        NPP = nppInsert,
+                        NPM = nppInsert,
                         NamaMahasiswa = namaInsert,
                         Email = emailInsert,
                         Alamat = alamatInsert,
@@ -84,6 +84,7 @@ public class Program
 
                     do
                     {
+                        Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("=====================================");
                         Console.WriteLine("Pilih Aksi Untuk Meng-Update data");
                         Console.WriteLine("1. Update All");
@@ -118,7 +119,7 @@ public class Program
 
 
                             maUpdate.Id = int.Parse(idUpdate);
-                            maUpdate.NPP = nppUpdate;
+                            maUpdate.NPM = nppUpdate;
                             maUpdate.NamaMahasiswa = namaUpdate;
                             maUpdate.Email = emailUpdate;
                             maUpdate.Alamat = alamatUpdate;
@@ -132,7 +133,7 @@ public class Program
                             Console.Write("Masukan NPP Mahasiswa : ");
                             string nppUpdate = Console.ReadLine();
                             maUpdate.Id = int.Parse(idUpdate);
-                            maUpdate.NPP = nppUpdate;
+                            maUpdate.NPM = nppUpdate;
 
                             UpdateDataMahasiswa(maUpdate, ForUpdate.NPM);
                         }
@@ -235,32 +236,31 @@ public class Program
                         break;
                 }
 
-                Console.WriteLine("=================================================");
-                Console.WriteLine("                 Data Mahasiswa                  ");
-                Console.WriteLine("=================================================");
+                Console.WriteLine("======================================================================");
+                Console.WriteLine("=                            Data Mahasiswa                          =");
+                Console.WriteLine("======================================================================");
 
                 while (reader.Read())
                 {
                     model.Id = Convert.ToInt32(reader["Id"]);
-                    model.NPP = reader["NPP"].ToString();
+                    model.NPM = reader["NPM"].ToString();
                     model.NamaMahasiswa = reader["NamaMahasiswa"].ToString();
                     model.Email = reader["Email"].ToString();
                     model.Alamat = reader["Alamat"].ToString();
                     model.JenisKelamin = reader["JenisKelamin"].ToString();
 
                     //Console.WriteLine();
-                    Console.WriteLine($"Id Mahasiswa                    : {model.Id}");
-                    Console.WriteLine($"Nomor Pokok Mahasiswa(NPP)      : {model.NPP}");
-                    Console.WriteLine($"Nama Mahasiswa                  : {model.NamaMahasiswa}");
-                    Console.WriteLine($"Email Address                   : {model.Email}");
-                    Console.WriteLine($"ALamat                          : {model.Alamat}");
-                    Console.WriteLine($"Jenis Kelamain                  : {model.JenisKelamin}");
-                    Console.WriteLine($"");
+                    Console.WriteLine($"Id Mahasiswa                            : {model.Id}");
+                    Console.WriteLine($"Nomor Pokok Mahasiswa(NPM)              : {model.NPM}");
+                    Console.WriteLine($"Nama Mahasiswa                          : {model.NamaMahasiswa}");
+                    Console.WriteLine($"Email Address                           : {model.Email}");
+                    Console.WriteLine($"ALamat                                  : {model.Alamat}");
                 }
 
-                Console.WriteLine("=================================================");
-                Console.WriteLine("                 End Mahasiswa                   ");
-                Console.WriteLine("=================================================");
+                Console.WriteLine("======================================================================");
+                Console.WriteLine("=                            End Mahasiswa                           =");
+                Console.WriteLine("======================================================================");
+                Console.WriteLine();
             }
 
             connection.Close();
@@ -279,32 +279,32 @@ public class Program
             if (reader.HasRows)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("=================================================");
-                Console.WriteLine("                 Data Mahasiswa                  ");
-                Console.WriteLine("=================================================");
+                Console.WriteLine("======================================================================");
+                Console.WriteLine("=                            Data Mahasiswa                          =");
+                Console.WriteLine("======================================================================");
 
                 while (reader.Read())
                 {
                     model.Id = Convert.ToInt32(reader["Id"]);
-                    model.NPP = reader["NPP"].ToString();
+                    model.NPM = reader["NPM"].ToString();
                     model.NamaMahasiswa = reader["NamaMahasiswa"].ToString();
                     model.Email = reader["Email"].ToString();
                     model.Alamat = reader["Alamat"].ToString();
                     model.JenisKelamin = reader["JenisKelamin"].ToString();
 
                     //Console.WriteLine();
-                    Console.WriteLine($"Id Mahasiswa                    : {model.Id}");
-                    Console.WriteLine($"Nomor Pokok Mahasiswa(NPP)      : {model.NPP}");
-                    Console.WriteLine($"Nama Mahasiswa                  : {model.NamaMahasiswa}");
-                    Console.WriteLine($"Email Address                   : {model.Email}");
-                    Console.WriteLine($"ALamat                          : {model.Alamat}");
-                    Console.WriteLine($"Jenis Kelamain                  : {model.JenisKelamin}");
-                    Console.WriteLine($"");
+                    Console.WriteLine($"Id Mahasiswa                            : {model.Id}");
+                    Console.WriteLine($"Nomor Pokok Mahasiswa(NPM)              : {model.NPM}");
+                    Console.WriteLine($"Nama Mahasiswa                          : {model.NamaMahasiswa}");
+                    Console.WriteLine($"Email Address                           : {model.Email}");
+                    Console.WriteLine($"ALamat                                  : {model.Alamat}");
+                    Console.WriteLine($"Jenis Kelamain                          : {model.JenisKelamin}");
                 }
 
-                Console.WriteLine("=================================================");
-                Console.WriteLine("                 End Mahasiswa                   ");
-                Console.WriteLine("=================================================");
+                Console.WriteLine("======================================================================");
+                Console.WriteLine("=                            End Mahasiswa                           =");
+                Console.WriteLine("======================================================================");
+                Console.WriteLine();
             }
 
             connection.Close();
@@ -321,7 +321,7 @@ public class Program
                                             VALUES 
                                             (@p_Npp, @p_NamaMahasiswa, @p_Email, @p_ALamat, @p_JenisKelamin)", connection);
 
-            command.Parameters.AddWithValue("@p_Npp", model.NPP);
+            command.Parameters.AddWithValue("@p_Npp", model.NPM);
             command.Parameters.AddWithValue("@p_NamaMahasiswa", model.NamaMahasiswa);
             command.Parameters.AddWithValue("@p_Email", model.Email);
             command.Parameters.AddWithValue("@p_ALamat", model.Alamat);
@@ -357,7 +357,7 @@ public class Program
                                                     WHERE Id = @p_IdMhs", connection);
 
                     commandNpp.Parameters.Add("@p_IdMhs", System.Data.SqlDbType.Int).Value = model.Id;
-                    commandNpp.Parameters.Add("@p_Npp", System.Data.SqlDbType.VarChar).Value = (object)model.NPP ?? DBNull.Value;
+                    commandNpp.Parameters.Add("@p_Npp", System.Data.SqlDbType.VarChar).Value = (object)model.NPM ?? DBNull.Value;
 
                     int cmdCountNpp = commandNpp.ExecuteNonQuery();
                     if (cmdCountNpp > 0)
@@ -461,7 +461,7 @@ public class Program
                                                     WHERE Id = @p_IdMhs", connection);
 
                     commandAll.Parameters.Add("@p_IdMhs", System.Data.SqlDbType.Int).Value = model.Id;
-                    commandAll.Parameters.Add("@p_Npp", System.Data.SqlDbType.VarChar).Value = (object)model.NPP ?? DBNull.Value;
+                    commandAll.Parameters.Add("@p_Npp", System.Data.SqlDbType.VarChar).Value = (object)model.NPM ?? DBNull.Value;
                     commandAll.Parameters.Add("@p_NamaMahasiswa", System.Data.SqlDbType.VarChar).Value = (object)model.NamaMahasiswa ?? DBNull.Value;
                     commandAll.Parameters.Add("@p_Email", System.Data.SqlDbType.VarChar).Value = (object)model.Email ?? DBNull.Value;
                     commandAll.Parameters.Add("@p_ALamat", System.Data.SqlDbType.VarChar).Value = (object)model.Alamat ?? DBNull.Value;
@@ -473,6 +473,7 @@ public class Program
                         Console.WriteLine($"Berhasil Update Data Ke database");
 
                         GetDataMahasiswa(eventType: EventType.Update);
+                        Console.ForegroundColor = ConsoleColor.White;
                     }
                     else
                     {
