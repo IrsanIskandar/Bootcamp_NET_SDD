@@ -23,13 +23,13 @@ public class Program
         do
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("===================================================");
-            Console.WriteLine("             Senang Belajar C Sharp(C#)            ");
-            Console.WriteLine("     Latihan Fundamental Bahasa Pemrograman C#     ");
-            Console.WriteLine("===================================================");
+            Console.WriteLine("====================================================");
+            Console.WriteLine("             Senang Belajar C Sharp(C#)             ");
+            Console.WriteLine("     Latihan Mumulai Database Dengan SQL Server     ");
+            Console.WriteLine("====================================================");
             Console.WriteLine();
 
-            Console.WriteLine("=====================================");
+            Console.WriteLine("=====================================================");
             Console.WriteLine("Modul Modul Belajar Bhs. Pemrogram C#");
             Console.WriteLine("1. Tampilkan Data Dari Database");
             Console.WriteLine("2. Tampilkan Data Dari Database Berdasarkan Id");
@@ -38,7 +38,7 @@ public class Program
             Console.WriteLine("5. Hapus Data");
             Console.WriteLine("6. Bersihkan Layar");
             Console.WriteLine("7. Keluar");
-            Console.WriteLine("======================================");
+            Console.WriteLine("=====================================================");
             Console.Write("Pilih Menu (1, 2, 3, 4, 5, 6, 7) : ");
             x = Console.ReadLine();
 
