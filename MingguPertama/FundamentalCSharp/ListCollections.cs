@@ -61,6 +61,7 @@ namespace FundamentalCSharp
                 {
                     Console.Clear();
                 }
+
             } while (x != "5");
         }
 
